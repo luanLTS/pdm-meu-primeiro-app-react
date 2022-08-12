@@ -1,7 +1,26 @@
-import React from 'react'
-import ReactDOM  from 'react-dom'
+import React from 'react';
+import ReactDOM  from 'react-dom';
+
+import './index.css';
 
 const App = () => {
+
+    const buttonStyle = {
+        marginTop: 12,
+        paddingTop: 8,
+        paddingBottom: 8,
+        backgroundColor: 'blueviolet',
+        color: 'white',
+        border: 'none',
+        width: '100%',
+        borderRadius: 8,
+        cursor: "pointer"
+    }
+
+    const textLabel = 'Nome:';
+
+    const getTextButton = () => "Enviar"
+
     return ( // devolve a representacao grafica do componente app
         <div 
             style={{
@@ -13,13 +32,14 @@ const App = () => {
             }}
         >
         <label
+        className='rotulo'
             htmlFor='nome'
             style={{
                 display: 'block',
                 marginBotton: 4
             }}
         >
-            Nome:
+            {textLabel}
         </label>
         <input
             type="text"
@@ -34,19 +54,9 @@ const App = () => {
             }}    
         />
             <button
-                style={{
-                    marginTop: 12,
-                    paddingTop: 8,
-                    paddingBottom: 8,
-                    backgroundColor: 'blueviolet',
-                    color: 'white',
-                    border: 'none',
-                    width: '100%',
-                    borderRadius: 8,
-                    cursor: "pointer"
-                }}
+                style={buttonStyle}
             >
-                Enviar
+                {getTextButton()}
             </button>
         </div>
     )
